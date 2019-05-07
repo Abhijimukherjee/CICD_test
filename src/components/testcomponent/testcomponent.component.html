@@ -1,0 +1,8 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  Enter a text: <input (input)="tcode=$event.target.value" id="emp" />
+  <p>
+    <input type="button" id="bt" value="Change Label Text" (click)="changeLabel()" />
+  </p>
+  <label id="lblEmp">{{Displaytext}}</label>
+  <router-outlet></router-outlet>
