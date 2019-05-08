@@ -92,7 +92,7 @@
               "src/assets"
 
             ],
-            "codeCoverage": true  
+            "codeCoverage": "true"  
           }
         },
         "lint": {
