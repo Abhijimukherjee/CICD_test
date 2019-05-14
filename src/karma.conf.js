@@ -7,7 +7,7 @@ module.exports = function (config) {
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-chrome-launcher'),
+      require('karma-phantomjs-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
@@ -17,7 +17,7 @@ module.exports = function (config) {
     },
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../coverage/my-test'),
-      reports: ['html', 'lcovonly', 'text-summary'],
+      reports: ['html', 'lcovonly'],
       fixWebpackSourcePaths: true
     },
     reporters: ['progress', 'kjhtml'],
@@ -25,12 +25,11 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true,
-
+    browsers: ['PhantomJS'],
+    singleRun: true,
+    restartOnFileChange: false,
     thresholds: {
-      emitWarning: false, // set to `true` to not fail the test command when thresholds are not met
+      emitWarning: false, // set to `true` to not fail the test command when thresholds are not met
       // thresholds for all files
       global: {
         statements: 100,
@@ -51,7 +50,5 @@ module.exports = function (config) {
         }
       }
     }
-
-
   });
 };
